@@ -14,6 +14,8 @@ gem "font-awesome-rails"
 gem 'simple_form'
 gem 'devise'
 gem 'cancancan', '~> 1.10'
+gem 'carrierwave'
+gem "mini_magick"
 
 group :development, :test do
   gem 'byebug'
