@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :posts
+  resources :categories
   get 'pages/index'
 
   get 'pages/about'
