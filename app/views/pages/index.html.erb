@@ -18,7 +18,8 @@
     <div class="row">
         <% @posts.each do |post| %>
             <div class="col-md-4">
-                <h4><%= post.title %></h4>
+                <h4><%= link_to post.title, post %></h4>
+                <small>Category: <%= link_to post.category.try(:name), post.category %></small>
                 <%= image_tag post.post_image.thumb.url, class: "img-responsive" %>
             </div>        
         <% end %>

@@ -16,7 +16,7 @@
     <% @posts.each do |post| %>
       <tr>
          <h2><%= link_to post.title, post %></h2>
-    <p><%= link_to post.category.try(:name), post.category %></p>
+        <p><%= link_to post.category.try(:name), post.category %></p>
         <td><%= post.title %></td>
         <td><%= post.body %></td>
         <td><%= post.category && post.category.name %></td>
