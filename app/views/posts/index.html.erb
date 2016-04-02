@@ -23,7 +23,6 @@
             <%= link_to 'Delete', post, method: :delete, class: "label label-danger", data: { confirm: 'Are you sure?' } %> ]
           <% end %>
       </h4>
-      
       <small>Category: <%= link_to post.category.try(:name), post.category %></small>
       <%= image_tag post.post_image.thumb.url, class: "img-responsive" %>
       </div>
@@ -36,8 +35,13 @@
         <p><%= link_to category.name, category %></p>
       <% end %>
       </div>
-    </div>
-  </div>
+    </div><!-- col-md-2 -->
+  </div><!-- row -->
+  <div class="row" style="margin-top: 170px;">
+    <div class="col-md-12 text-center">
+      <%= will_paginate @posts, :page_links => false %>
+    </div><!-- col-md-12 -->
+  </div><!-- row -->
 </div><!-- container -->
 
 

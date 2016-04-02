@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all.order("created_at desc")
+    @posts = Post.all.order("created_at desc").paginate(:page => params[:page], :per_page => 9)
     @categories = Category.all
   end
 
@@ -13,6 +13,7 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @post = Post.friendly.find(params[:id])
+    @categories = Category.all
   end
 
   # GET /posts/new
