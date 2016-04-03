@@ -3,4 +3,5 @@ class Category < ActiveRecord::Base
     friendly_id :name, use: :slugged
     belongs_to :user
     has_many :posts
+    validates_presence_of :name
 end
