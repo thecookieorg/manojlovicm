@@ -1,8 +1,12 @@
 <div class="container">
     <div class="jumbotron">
         <h1><%= image_tag 'rostilj.jpg', class: "img-rounded img-responsive", style: "width: 260px; margin: 0px auto;"%></h1>
-        <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-        <p><a class="btn btn-primary btn-lg">Learn more</a></p>
+        <div class="text-center">
+            <p>Hi, I'm Marko. I love learning new things, and I love writing about my learning journey. This blog is intended to share my learning journey and to keep me motivated to learn new things, every day.</p>
+            <p>If you see that I am doing something wrong in my approach, code, or anything - I would love to hear from you in comments or email me at marko.manojlovic.bg[at]gmail.com!</p>
+            <p><%= link_to "my storry", pages_about_path, class: "btn btn-primary btn-lg" %></p>
+        </div>
+        
     </div><!-- jumbotron -->
 </div><!-- container-fluid -->
     
@@ -21,7 +25,7 @@
         <% @posts.each do |post| %>
             <div class="col-md-4">
                 <h4><%= link_to post.title, post %></h4>
-                <small>Category: <%= link_to post.category.try(:name), post.category %></small>
+                <small>Category: <%= link_to post.category.try(:name), post.category %></small> | <small>Post created <%= time_ago_in_words(post.created_at) %> ago</small>
                 <%= image_tag post.post_image.thumb.url, class: "img-responsive" %>
             </div>        
         <% end %>

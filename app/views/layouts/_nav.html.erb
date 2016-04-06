@@ -12,9 +12,9 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><%= link_to 'First Page', root_path %></li>
-        <li><%= link_to 'Me, in details (kinda)', pages_about_path %></li>
-        <li><%= link_to 'Me, writing about stuff', posts_path %></li>
+        <li><%= link_to 'Home', root_path %></li>
+        <li><%= link_to 'About Me', pages_about_path %></li>
+        <li><%= link_to 'Blog', posts_path %></li>
         <% if user_signed_in? %>
           <li>
           <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
