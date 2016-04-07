@@ -1,4 +1,13 @@
 <%# app/views/categories/show.html.erb %>
-<% @category.posts.each do |post| %>
-  <li><%= link_to post.title, post_path(post) %></li>
-<% end %>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <h4>Things I wrote about under this category:</h4>
+            <ul>
+                <% @category.posts.each do |post| %>
+                  <li><%= link_to post.title, post_path(post) %></li>
+                <% end %>                
+            </ul>
+        </div>
+    </div>
+</div>

@@ -6,21 +6,29 @@
   </div>
   
   </div>
-  <div class="container-fluid">
+  <div class="container">
   <div class="row">
     <div class="col-md-10">
       <% @posts.each do |post| %>
-      <div class="col-md-4">
-      <h4>
-        <%= link_to post.title, post %> 
-          <% if user_signed_in? %>
-            [ <%= link_to 'Edit', edit_post_path(post), class: "label label-warning" %>
-            <%= link_to 'Delete', post, method: :delete, class: "label label-danger", data: { confirm: 'Are you sure?' } %> ]
-          <% end %>
-      </h4>
-      <small>Category: <%= link_to post.category.try(:name), post.category %></small>
-      <%= image_tag post.post_image.thumb.url, class: "img-responsive" %>
+      <div class="row" style="margin-bottom: 30px;">
+        <div class="col-md-2">
+          <%= image_tag post.post_image.thumb.url, class: "img-responsive", style: "margin-top: 27px;" %>    
+        </div>
+        <div class="col-md-10">
+          <h2>
+          <%= link_to post.title, post %> 
+            <% if user_signed_in? %>
+              [ <%= link_to 'Edit', edit_post_path(post), class: "label label-warning" %>
+              <%= link_to 'Delete', post, method: :delete, class: "label label-danger", data: { confirm: 'Are you sure?' } %> ]
+            <% end %>
+          </h2>
+          <small>Category: <%= link_to post.category.try(:name), post.category %></small>
+          <hr>
+          <p><%= post.short_description %></p>
+          <%= link_to "Read More >", post, class: "btn btn-link" %>
+        </div>
       </div>
+      <hr>
     <% end %>
     </div>
     <div class="col-md-2">

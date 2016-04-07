@@ -5,8 +5,8 @@
       <h1><%= @post.title %></h1>
       <small>Category: <%= link_to @post.category.name, category_path(@post.category) %></small> | <small>Post created <%= time_ago_in_words(@post.created_at) %> ago</small>
       <hr>
-      <%= image_tag @post.post_image.full.url, class: "img-responsive" %>
-      <div style="margin-top: 70px">
+      <%# image_tag @post.post_image.full.url, class: "img-responsive" %>
+      <div style="margin-top: 10px">
         <p><%= @post.body.html_safe %></p>
       </div>
     </div><!-- col-md-10 -->

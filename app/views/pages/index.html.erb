@@ -4,7 +4,7 @@
         <div class="text-center">
             <p>Hi, I'm Marko. I love learning new things, and I love writing about my learning journey. This blog is intended to share my learning journey and to keep me motivated to learn new things, every day.</p>
             <p>If you see that I am doing something wrong in my approach, code, or anything - I would love to hear from you in comments or email me at marko.manojlovic.bg[at]gmail.com!</p>
-            <p><%= link_to "my storry", pages_about_path, class: "btn btn-primary btn-lg" %></p>
+            <p><%# link_to "My Storry", pages_about_path, class: "btn btn-primary btn-lg" %></p>
         </div>
         
     </div><!-- jumbotron -->
@@ -16,18 +16,18 @@
             <hr>
         </div><!-- col-md-6 col-md-offset-3 -->
     </div><!-- row -->
-    <div class="row">
-        <div class="col-md-4">
-            <h3>From the blog</h3>
-        </div>
-    </div>
+    
     <div class="row">
         <% @posts.each do |post| %>
-            <div class="col-md-4">
-                <h4><%= link_to post.title, post %></h4>
-                <small>Category: <%= link_to post.category.try(:name), post.category %></small> | <small>Post created <%= time_ago_in_words(post.created_at) %> ago</small>
-                <%= image_tag post.post_image.thumb.url, class: "img-responsive" %>
-            </div>        
+            <div class="col-md-2" style="margin-bottom: 30px;">
+                <%= image_tag post.post_image.thumb.url, class: "img-responsive", style: "margin-top: 27px;" %>
+            </div>
+            <div class="col-md-10" style="margin-bottom: 30px">
+                <h2><%= link_to post.title, post %></h2>
+                <p><%= post.short_description %></p>
+                <%= link_to "Read More >", post, class: "btn btn-link" %>
+                <hr>
+            </div>
         <% end %>
         
     </div>
