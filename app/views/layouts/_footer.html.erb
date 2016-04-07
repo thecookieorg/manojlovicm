@@ -1,0 +1,16 @@
+<footer class="container">
+    <hr>
+    <div class="row">
+        <div class="col-md-6">
+            <p>© 2016, Marko Manojlovic. | <% if user_signed_in? %>
+                                                <%= link_to('Logout', destroy_user_session_path, :method => :delete) %> 
+                                            <% else %>
+                                              <%= link_to('login', new_user_session_path) %>
+                                            <% end %>
+            </p>
+        </div>
+        <div class="col-md-6" style="text-align: right;">
+            <p>Yes, this is yet another 'Built with <i class="fa fa-heart" style="color: red;"></i> using Bootstrap' website.</p>
+        </div>
+    </div>
+</footer>

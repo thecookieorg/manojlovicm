@@ -21,6 +21,7 @@ gem 'friendly_id', '~> 5.1.0' # Note: You MUST use 5.0.0 or greater for Rails 4.
 gem 'ckeditor', git: 'https://github.com/galetahub/ckeditor', branch: 'master'
 gem 'will_paginate', '~> 3.0.6'
 gem "figaro"
+gem 'google-webfonts-rails', '~> 0.0.4'
 
 group :development, :test do
   gem 'byebug'
