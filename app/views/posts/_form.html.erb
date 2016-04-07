@@ -1,9 +1,13 @@
+<link rel="stylesheet" href="/styles/dracula.css">
+<script src="/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
 <%= simple_form_for(@post) do |f| %>
 
   <div class="form-inputs">
     <%= f.input :title %>
     <%= f.input :short_description %>
-    <%= f.input :body, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Full'} } %>
+    <%= f.input :body, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'document'} } %>
     <%= f.label "Add Post Image" %>
     <%= f.file_field :post_image %>
     <br>

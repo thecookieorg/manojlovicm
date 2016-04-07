@@ -36,14 +36,16 @@ Ckeditor.setup do |config|
   # By default: nil (no limit)
   # config.assets_languages = ['en', 'uk']
   # config.assets_plugins = ['image', 'smiley']
+  config.assets_plugins = ['widget', 'dialog', 'dialogui', 'lineutils', 'codesnippet']
   
   # CKEditor CDN
   # More info here http://cdn.ckeditor.com/
   # By default: nil (CDN disabled)
-  # config.cdn_url = "//cdn.ckeditor.com/4.5.6/standard/ckeditor.js"
+  config.cdn_url = "//cdn.ckeditor.com/4.5.6/full/ckeditor.js"
+  #config.extraPlugins = "codesnippet"
 
   # JS config url
   # Used when CKEditor CDN enabled
   # By default: "/assets/ckeditor/config.js"
-  # config.js_config_url = "/assets/ckeditor/config.js"
+  config.js_config_url = "/assets/ckeditor/config.js"
 end

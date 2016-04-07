@@ -19,7 +19,7 @@ gem 'carrierwave'
 gem 'carrierwave-dropbox'
 gem "mini_magick"
 gem 'friendly_id', '~> 5.1.0' # Note: You MUST use 5.0.0 or greater for Rails 4.0+
-gem 'ckeditor'
+gem 'ckeditor', git: 'https://github.com/galetahub/ckeditor', branch: 'master'
 gem 'will_paginate', '~> 3.0.6'
 gem "figaro"
 
