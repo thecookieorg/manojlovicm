@@ -15,14 +15,12 @@
           <%= image_tag post.post_image.thumb.url, class: "img-responsive", style: "margin-top: 27px;" %>    
         </div>
         <div class="col-md-10">
-          <h2>
-          <%= link_to post.title, post %> 
-            <% if user_signed_in? %>
-              [ <%= link_to 'Edit', edit_post_path(post), class: "label label-warning" %>
-              <%= link_to 'Delete', post, method: :delete, class: "label label-danger", data: { confirm: 'Are you sure?' } %> ]
-            <% end %>
-          </h2>
-          <small>Category: <%= link_to post.category.try(:name), post.category %></small>
+          <h2><%= link_to post.title, post %></h2>
+          <small>Category: <%= link_to post.category.try(:name), post.category %> | <% if user_signed_in? %>
+                                                                                      [ <%= link_to 'Edit', edit_post_path(post), class: "label label-warning" %>
+                                                                                      <%= link_to 'Delete', post, method: :delete, class: "label label-danger", data: { confirm: 'Are you sure?' } %> ]
+                                                                                    <% end %>
+          </small>
           <hr>
           <p><%= post.short_description %></p>
           <%= link_to "Read More >", post, class: "btn btn-link" %>
