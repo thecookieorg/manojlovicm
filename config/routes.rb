@@ -4,9 +4,11 @@ Rails.application.routes.draw do
   resources :categories
   get 'pages/index'
 
-  get 'pages/about'
+  # get 'pages/about'
+  get '/about' => 'pages#about'
+  get 'projects' => 'pages#projects'
   
-  get 'pages/projects'
+  #get 'pages/projects'
 
   get 'pages/contact'
 
