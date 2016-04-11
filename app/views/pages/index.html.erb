@@ -12,7 +12,8 @@
     
 <div class="container">
     <div class="row">
-        <div class="col-md-6 col-md-offset-3">
+        <div class="col-md-6 col-md-offset-3 text-center">
+            <h3>From the blog</h3>
             <hr>
         </div><!-- col-md-6 col-md-offset-3 -->
     </div><!-- row -->
@@ -30,5 +31,10 @@
             </div>
         <% end %>
         
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3 text-center">
+            <p><%= link_to "Browse all posts", posts_path, class: "btn btn-success btn-lg" %></p>
+        </div>
     </div>
 </div><!-- container -->
